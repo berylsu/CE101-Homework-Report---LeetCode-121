@@ -18,12 +18,8 @@ gcc -std=c99 -Wall -Wextra original.c -o original
 # Compile and run the time-optimized code
 gcc -std=c99 -Wall -Wextra optimized_time.c -o optimized_time
 ./optimized_time
-
-# Compile and run the space-optimized code
-gcc -std=c99 -Wall -Wextra optimized_space.c -o optimized_space
-./optimized_space
 ```
-*(Note: On Windows terminals, run `original.exe`, `optimized_time.exe`, or `optimized_space.exe` instead of `./`)*
+*(Note: On Windows terminals, run `original.exe`, `optimized_time.exe` instead of `./`)*
 
 ## Test Cases Used
 Each program is tested with the two starter arrays and two additional test cases (including a single-element edge case):
