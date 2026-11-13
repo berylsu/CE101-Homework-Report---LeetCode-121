@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+
+int maxProfit(int *prices, int pricesSize) {
+    if (pricesSize < 2) {
+        return 0;
+    }
+
+    int minPrice = prices[0];
+    int maxProfit = 0;
+
+    for (int i = 1; i < pricesSize; i++) {
+        if (prices[i] < minPrice) {
+            minPrice = prices[i];
+        } else {
+            int profit = prices[i] - minPrice;
+            if (profit > maxProfit) {
+                maxProfit = profit;
+            }
+        }
+    }
+
+    return maxProfit;
+}
+
+int main(void) {
+    int prices1[] = {7, 1, 5, 3, 6, 4};
+    int prices2[] = {7, 6, 4, 3, 1};
+    int prices3[] = {5};
+    int prices4[] = {1, 2, 3, 4, 5};
+
+    int n1 = (int)(sizeof(prices1) / sizeof(prices1[0]));
+    int n2 = (int)(sizeof(prices2) / sizeof(prices2[0]));
+    int n3 = (int)(sizeof(prices3) / sizeof(prices3[0]));
+    int n4 = (int)(sizeof(prices4) / sizeof(prices4[0]));
+
+    printf("Test 1: %d\n", maxProfit(prices1, n1));
+    printf("Test 2: %d\n", maxProfit(prices2, n2));
+    printf("Test 3: %d\n", maxProfit(prices3, n3));
+    printf("Test 4: %d\n", maxProfit(prices4, n4));
+    return 0;
+}
